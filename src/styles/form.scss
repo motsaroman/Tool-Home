@@ -1,0 +1,135 @@
+.popup__wrap {
+  display: none;
+}
+.popup__wrap.active {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 500vh;
+  background-color: rgba(0, 0, 0, 0.445);
+  z-index: 2;
+  .popup {
+    display: none;
+    font-size: 45px;
+  }
+  .popup.active {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    top: 30%;
+    left: 25%;
+    padding: 5px 5px 50px 5px;
+    z-index: 150;
+    background-color: #0251b8d2;
+    color: white;
+  }
+  .popup__close {
+    width: 100%;
+    .popup__close_img {
+      float: right;
+      cursor: pointer;
+    }
+  }
+}
+
+.block__form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500vh;
+  background-color: rgba(0, 0, 0, 0.685);
+  display: none;
+  z-index: 100;
+
+  .form__title {
+    color: #1f3f68;
+    font-size: 20px;
+  }
+  label {
+    margin-top: 10px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(31, 63, 104, 0.808);
+  }
+  input {
+    height: 40px;
+    text-indent: 42px;
+    border: 1px solid rgba(53, 109, 173, 0.5);
+    border-radius: 10px;
+  }
+  textarea {
+    height: 60px;
+    text-indent: 42px;
+    padding-top: 20px;
+    border: 1px solid rgba(53, 109, 173, 0.5);
+    border-radius: 10px;
+  }
+}
+#submitBtn {
+  margin-top: 20px;
+  padding: 23px 185px;
+  background-color: #5a98d0;
+  color: white;
+  border-radius: 10px;
+}
+
+#form {
+  margin: 0.5% auto;
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  background-color: white;
+  box-shadow: 5px 10px 50px 0 rgba(53, 110, 173, 1);
+  border-radius: 10px;
+  padding: 25px;
+  z-index: 100;
+  .form__close {
+    align-self: end;
+    cursor: pointer;
+    transition: all 0.5s;
+    padding: 5px;
+  }
+  .error-messages {
+    padding-top: 5px;
+    color: red;
+  }
+}
+.form__close:hover {
+  background-color: #1f3f68;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.block__form.active {
+  display: block;
+}
+@media (max-width: 767px) {
+  .popup__wrap.active {
+    .popup.active {
+      height: 100px;
+      padding: 5px 5px 20px 5px;
+    }
+    .popup__submit_text {
+      margin-top: 20px;
+    }
+    .popup {
+      font-size: 15px;
+    }
+    .popup__close_img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  #form {
+    width: 300px;
+  }
+  #submitBtn {
+    padding: 23px 100px;
+    background-color: #5a98d0;
+    color: white;
+    border-radius: 10px;
+  }
+}

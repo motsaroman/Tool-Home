@@ -1,0 +1,120 @@
+$burger-line: #356ead;
+$burger-width: 100%;
+$burger-height: 1px;
+$text-color: #1f3f68;
+$btn-color: #5a98d0;
+$btn-radius: 10px;
+$text-color2: white;
+header {
+  background: linear-gradient(0deg, #98c3e8 8.84%, rgba(152, 195, 232, 0) 23%);
+  min-height: 768px;
+}
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 83px 0 83px;
+}
+.burger {
+  width: 24px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+
+  .burger__line {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: $burger-width;
+    height: $burger-height;
+    background-color: $burger-line;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: $burger-width;
+      height: $burger-height;
+      background-color: $burger-line;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 0;
+      width: $burger-width;
+      height: $burger-height;
+      background-color: $burger-line;
+    }
+  }
+}
+
+.header__wrap_content {
+  position: relative;
+  margin-left: 213px;
+
+  .bg-img {
+    position: absolute;
+    top: 25px;
+    right: 53px;
+    width: 687px;
+    height: 579px;
+    z-index: -10;
+  }
+
+  h1 {
+    color: $text-color;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 74px;
+    padding-top: 101px;
+  }
+  .header__wrap_content-title {
+    font-size: 16px;
+    color: $text-color;
+    line-height: 26px;
+    margin-top: 32px;
+  }
+  .header__wrap_content-btn {
+    padding: 15px 48px;
+    background-color: $btn-color;
+    border-radius: $btn-radius;
+    color: $text-color2;
+    margin-top: 71px;
+    font-size: 16px;
+    transition: all 0.3s;
+    z-index: -2;
+  }
+  .header__wrap_content-btn:hover {
+    background-color: #1f3f68;
+    transition: all 0.3s;
+    transform: scale(1.1);
+  }
+}
+@media (max-width: 1231px) {
+  .bg-img {
+    opacity: 90%;
+  }
+}
+@media (max-width: 1023px) {
+  .bg-img {
+    opacity: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .bg-img {
+    display: none;
+  }
+  .header__wrap_content {
+    position: relative;
+    margin-left: 0px;
+    text-align: center;
+  }
+  .header__wrap_content-btn {
+    padding: 15px 0px;
+  }
+  .header__wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px 0 50px;
+  }
+}
